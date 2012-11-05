@@ -25,7 +25,7 @@ else {
 
 ?>
 
-<p><b>Add a message to a table in the message database</b></p>
+<p><b>Add a message to the database</b></p>
 <form action="add.php" method="post">
 Message: <input type="text" name="message"><br>
 Name: <input type="text" name="name"><br>

@@ -14,7 +14,7 @@ $query = "INSERT INTO " . DB_TABLE . " VALUES
 
 printf("<p>New message: $timestamp, $name, $ip, $message</p>");
 if ($mysqli->query($query)) {
-    printf("<p>Message successfully added.</p>");
+    printf("<p>Message was successfully added.</p>");
 }
 else {
     printf("<p>Message failed to be added: %s</p>", $mysqli->error);
