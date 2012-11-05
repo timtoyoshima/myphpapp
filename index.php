@@ -9,19 +9,25 @@ include 'db-connect.php';
 $query = "SELECT * FROM " . DB_TABLE;
 
 if ($mresult = $mysqli->query($query)) {
-  printf("<table>");
-  while ($mrow = $mresult->fetch_row()) {
-    printf("<tr>");
-    foreach ($mrow as $val) {
-      printf("<td>%s</td>", $val);
+  if ($mresult->num_rows > 0) {
+    printf("<table>");
+    while ($mrow = $mresult->fetch_row()) {
+      printf("<tr>");
+      foreach ($mrow as $val) {
+        printf("<td>%s</td>", $val);
+      }
+      printf("</tr>");
     }
-    printf("</tr>");
+    printf("</table>");
   }
-  printf("</table>");
+  else {
+    printf("<p>No messages yet. How about adding one?</p>");
+  }
 }
 else {
-  printf("<p>No messages yet. How about adding one?</p>");
+    printf("<p>Could not execute query. MySQL error: %s</p>", $mysqli->error);
 }
+
 
 ?>
 
