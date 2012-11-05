@@ -29,7 +29,7 @@ else {
 <form action="add.php" method="post">
 Message: <input type="text" name="message"><br>
 Name: <input type="text" name="name"><br>
-<input type="Submit">
+<input type="Submit" value="Add Message">
 </form>
 
 </body>
