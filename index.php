@@ -37,6 +37,7 @@ Message: <input type="text" name="message"><br>
 Name: <input type="text" name="name"><br>
 <input type="Submit" value="Add Message">
 </form>
+<p>This <em>PHP</em> application is now running on the host <?php echo gethostname() ?>.</p>
 
 </body>
 </html>
