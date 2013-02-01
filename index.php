@@ -1,36 +1,13 @@
-<html>
-<body>
-<h1>Messages</h1>
-<p>Example PHP application that reads and writes to a MySQL database.</p>
-<h2>All Messages in Database</h2><table>
-<?php
-include 'db-connect.php';
-
-$query = "SELECT * FROM " . DB_TABLE;
-
-if ($mresult = $mysqli->query($query)) {
-  printf("<table>");
-  while ($mrow = $mresult->fetch_row()) {
-    printf("<tr>");
-    foreach ($mrow as $val) {
-      printf("<td>%s</td>", $val);
-    }
-    printf("</tr>");
-  }
-  printf("</table>");
-}
-else {
-  printf("<p>No messages yet. How about adding one?</p>");
-}
-
-?>
-
-<p><b>Add a message to a table in the message database</b></p>
-<form action="add.php" method="post">
-Message: <input type="text" name="message"><br>
-Name: <input type="text" name="name"><br>
-<input type="Submit">
-</form>
-
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Simple PHP Application</title></head>
+<body
+<h1>Congratulations!</h1>
+<p>Hello from <?php echo gethostname() ?>.</p>
+<p>Your <em>PHP</em> application is now running on the host <?php echo gethostname() ?> in your own dedicated environment in the AWS&nbsp;Cloud</p>
+<p>This host is running PHP version <?php echo phpversion(); ?>.</p>
 </body>
 </html>
